@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+const download = require('download')
+const http = require('axios')
+const releases = 'https://api.github.com/repos/fnkr/caddy-builds/releases/latest'
+const DIST_DIR = `${__dirname}/dist`
+
+const getAssets = async () => {
+  const res = await http.get(releases)
+  const assets = res.data.assets.map(asset => asset.browser_download_url)
+  return assets
+}
+
+const downloadAndExtract = async (assets) => {
+  await Promise.all(assets.map(x => download(x, DIST_DIR)))
+  console.log(`Files downloaded to ${DIST_DIR}`)
+}
+
+const start = async () => {
+  const assets = await getAssets()
+  downloadAndExtract(assets)
+}
+
+start()

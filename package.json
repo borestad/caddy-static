@@ -1,0 +1,20 @@
+{
+  "name": "caddy-static",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:borestad/caddy-static.git",
+  "author": "Johan Borestad <johan@borestad.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "axios": "^0.18.0",
+    "download": "^7.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^12.0.0-alpha.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "prettier-eslint": "^8.8.1"
+  }
+}
